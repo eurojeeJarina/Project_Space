@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\PlayerTagUI.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Games/Project_Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
