@@ -239,6 +239,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rcsThrust: 100
   mainThrust: 40
+  mainEngineSound: {fileID: 8300000, guid: 045ecec5a3e04554bbc0ca75fc13f0a6, type: 3}
+  deathSound: {fileID: 8300000, guid: 514a4a0b2bf36964fa66b8eabc27401b, type: 3}
+  levelLoadSound: {fileID: 8300000, guid: d137765ba954f8d4fb5ec3fd668d5c7f, type: 3}
+  mainEngineParticles: {fileID: 0}
+  deathParticles: {fileID: 19860484, guid: 6586ff0f14125534cae2f5d8f04b7871, type: 3}
+  levelLoadParticles: {fileID: 19814690, guid: cd4d7020429cde74db076ffa72495419, type: 3}
 --- !u!82 &1388731902128401521
 AudioSource:
   m_ObjectHideFlags: 0
@@ -250,7 +256,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

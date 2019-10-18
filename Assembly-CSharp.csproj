@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\PlayerTagUI.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
+    <None Include="Assets\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Games/Project_Space/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
