@@ -62,6 +62,7 @@ public class Rocket : MonoBehaviour
         state = State.Transcending;
         audioSource.Stop();
         audioSource.PlayOneShot(levelLoadSound);
+        levelLoadParticles.Play();
         Invoke("LoadNextScene", 1f); // wait for 1 second before loading next scene
     }
 
@@ -70,6 +71,7 @@ public class Rocket : MonoBehaviour
         state = State.Dying;
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
+        deathParticles.Play();
         Invoke("LoadFirstLevel", 2f);
     }
 

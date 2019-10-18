@@ -462,6 +462,11 @@ PrefabInstance:
       propertyPath: field of view
       value: 69
       objectReference: {fileID: 0}
+    - target: {fileID: 2250315192021113266, guid: 5fdeed23814c4f04793652cc2584d687,
+        type: 3}
+      propertyPath: m_CustomSkybox
+      value: 
+      objectReference: {fileID: 2100000, guid: 7d1430089afb5854892670b854d1d684, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5fdeed23814c4f04793652cc2584d687, type: 3}
 --- !u!1001 &2316564526113444671
@@ -664,6 +669,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127555591969955198, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104018938796116382, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104018938953349816, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Friendly
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127555591969955196, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104018938796116380, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6104018938953349818, guid: c47c5fa406d863f4d967f1020cf0a02f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c47c5fa406d863f4d967f1020cf0a02f, type: 3}
