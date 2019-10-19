@@ -865,7 +865,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5052,8 +5052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99f83b0dbd7874c83845e5422a1456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 100
-  mainThrust: 40
+  rcsThrust: 250
+  mainThrust: 2000
+  levelLoadDelay: 2
   mainEngineSound: {fileID: 8300000, guid: 045ecec5a3e04554bbc0ca75fc13f0a6, type: 3}
   deathSound: {fileID: 8300000, guid: 514a4a0b2bf36964fa66b8eabc27401b, type: 3}
   levelLoadSound: {fileID: 8300000, guid: d137765ba954f8d4fb5ec3fd668d5c7f, type: 3}
@@ -5552,6 +5553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Fireworks_Yellow_Large
       objectReference: {fileID: 0}
+    - target: {fileID: 19861012, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.02999878
@@ -5594,10 +5599,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 473066, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19861012, guid: 0f75f6db4a318f54382e0c98b2226db8, type: 3}
-      propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
