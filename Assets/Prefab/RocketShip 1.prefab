@@ -4766,7 +4766,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 4b294e20f51814785818b6a20b456aa8, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5052,13 +5052,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e99f83b0dbd7874c83845e5422a1456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rcsThrust: 250
-  mainThrust: 2000
   levelLoadDelay: 2
-  mainEngineSound: {fileID: 8300000, guid: 045ecec5a3e04554bbc0ca75fc13f0a6, type: 3}
   deathSound: {fileID: 8300000, guid: 514a4a0b2bf36964fa66b8eabc27401b, type: 3}
   levelLoadSound: {fileID: 8300000, guid: d137765ba954f8d4fb5ec3fd668d5c7f, type: 3}
-  mainEngineParticles: {fileID: 32135093}
   deathParticles: {fileID: 8318344185109299848}
   levelLoadParticles: {fileID: 4597768613677450396}
 --- !u!82 &1388731902128401521

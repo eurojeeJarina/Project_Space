@@ -72,11 +72,17 @@
     <Compile Include="Assets\AssetStoreImports\Particle Ribbon by Moonflower Carnivore\Scripts\randomParticleRotation.cs" />
     <Compile Include="Assets\AssetStoreImports\Particle Ribbon by Moonflower Carnivore\Scripts\ReverseNormals.cs" />
     <Compile Include="Assets\AssetStoreImports\Particle Ribbon by Moonflower Carnivore\Scripts\rotation.cs" />
+    <Compile Include="Assets\Scripts\FuelText.cs" />
+    <Compile Include="Assets\Scripts\LeftButtonEventHandler.cs" />
     <Compile Include="Assets\Scripts\Oscillator.cs" />
     <Compile Include="Assets\Scripts\PlayerTagUI.cs" />
+    <Compile Include="Assets\Scripts\RightButtonEventHandler.cs" />
     <Compile Include="Assets\Scripts\Rocket.cs" />
+    <Compile Include="Assets\Scripts\RocketSandboxScript.cs" />
+    <Compile Include="Assets\Scripts\ThrustButton.cs" />
     <None Include="Assets\AssetStoreImports\Particle Ribbon by Moonflower Carnivore\Shaders\Particle Alpha Blend HDR.shader" />
     <None Include="Assets\AssetStoreImports\Fantasy Skybox FREE\Readme.txt" />
+    <None Include="Assets\read me.txt" />
     <None Include="Assets\AssetStoreImports\Fantasy Skybox FREE\Fog and Ambient references.txt" />
     <None Include="Assets\AssetStoreImports\KY_effects\MagicEffectsPackFree\ReadMe.txt" />
     <None Include="Assets\AssetStoreImports\SimpleFX\Materials\UnlitVertexColour_Alpha.shader" />
