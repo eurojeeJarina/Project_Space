@@ -13,14 +13,14 @@ public class ThrustButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     [SerializeField] float fuelCost = 5f;
 
 
-
+    AudioSource audioSource;
     bool fingerOn = false;
 
     // Start is called before the first frame update
     void Start()
     {
         fuelCost = fuelCost * Time.deltaTime;
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,11 +28,12 @@ public class ThrustButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandle
     {
         if (fingerOn && Rocket.alive)
         {
-            
+
             rocketPlayer.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
             Rocket.fuelEnergy = Rocket.fuelEnergy - fuelCost;
-            //
+
         }
+
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -25,22 +25,21 @@ public class LeftButtonEventHandler : MonoBehaviour, IPointerDownHandler, IPoint
            
             float rotationSpeed = rcsThrust * Time.deltaTime;
             rocketPlayer.transform.Rotate(Vector3.forward * rotationSpeed);
-            
+            rocketPlayer.GetComponent<Rigidbody>().freezeRotation = false; // resume physics control of rotation
         }
         else {
-            
+            rocketPlayer.GetComponent<Rigidbody>().freezeRotation = true; // take manual control of rotation
         }
     }    
     
     public void OnPointerDown(PointerEventData eventData)
     {
         fingerOn = true;
-        rocketPlayer.GetComponent<Rigidbody>().freezeRotation = true; // take manual control of rotation
+       
     }
     public void OnPointerUp(PointerEventData eventData)
     {
         fingerOn = false;
-        rocketPlayer.GetComponent<Rigidbody>().freezeRotation = false; // resume physics control of rotation
     }
 
     public void OnPointerEnter(PointerEventData eventData)

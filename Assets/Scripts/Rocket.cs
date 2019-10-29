@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class Rocket : MonoBehaviour
 {
     [SerializeField] float rcsThrust = 100f;
@@ -14,11 +15,12 @@ public class Rocket : MonoBehaviour
     //[SerializeField] AudioClip mainEngineSound;
     [SerializeField] AudioClip deathSound;
     [SerializeField] AudioClip levelLoadSound;
+    
 
-   // [SerializeField] ParticleSystem mainEngineParticles;
+    // [SerializeField] ParticleSystem mainEngineParticles;
     [SerializeField] ParticleSystem deathParticles;
     [SerializeField] ParticleSystem levelLoadParticles;
-
+    [SerializeField] float duration = 1f;
 
     
 
@@ -29,8 +31,9 @@ public class Rocket : MonoBehaviour
     Rigidbody rigidBody;
     AudioSource audioSource;
     int currentSceneIndex;
+    int nextSceneIndex = 0;
     int maxSceneIndex = 2;
-
+    [SerializeField]GameObject light;
 
     enum State {Alive, Dying, Transcending};
 
@@ -38,14 +41,18 @@ public class Rocket : MonoBehaviour
 
     public static bool alive = true;
     public static float fuelEnergy = 100f;
+    bool collisionsAreEnabled = true;
 
     // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        
         fuelEnergy = 100f;
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        maxSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
+        //print("Number of Scene: " + maxSceneIndex);
 /*      
         RightButton.GetComponent<Button>();
         leftButton.GetComponent<Button>();
@@ -64,6 +71,10 @@ public class Rocket : MonoBehaviour
             CheckFuel();
             //RespondToThrustInput();
             RespondToRotateInput();
+            if (Debug.isDebugBuild)
+            {
+                RespondToDebugKey(); // TODO: Only if debug mode is on.
+            }
         }
         else {
             alive = false;
@@ -77,9 +88,22 @@ public class Rocket : MonoBehaviour
         }
     }
 
+   private void RespondToDebugKey()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextScene();
+        } 
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsAreEnabled = !collisionsAreEnabled;
+           // print("Collisions: " + collisionsAreEnabled);
+        }
+        
+    }
     void OnCollisionEnter(Collision collision)
     {
-        if(state != State.Alive){return;} // break the execution 
+        if(state != State.Alive || !collisionsAreEnabled){return;} // break the execution 
 
         switch (collision.gameObject.tag) // check tags on collision
         {
@@ -99,23 +123,34 @@ public class Rocket : MonoBehaviour
 
     void StartSuccessSequence()
     {
+
+        
         state = State.Transcending;
         audioSource.Stop();
         audioSource.PlayOneShot(levelLoadSound);
+        
         levelLoadParticles.Play();
         Invoke("LoadNextScene", levelLoadDelay); // wait for 1 second before loading next scene
     }
 
     void StartDeathSequence()
     {
+        
         state = State.Dying;
+        
         audioSource.Stop();
         audioSource.PlayOneShot(deathSound);
         deathParticles.Play();
+        DisableLight();
         Invoke("LoadFirstLevel", levelLoadDelay);
     }
-
-    void LoadNextScene()
+    void DisableLight()
+    {
+        float phi = Time.time / duration * 2 * Mathf.PI;
+        float amplitude = Mathf.Cos(phi) * 0.5F + 0.5F;
+        light.GetComponent<Light>().intensity = amplitude;
+    }
+    private void LoadNextScene()
     {
         /*        switch (state)
                 {
@@ -129,16 +164,16 @@ public class Rocket : MonoBehaviour
                         print("No state");
                         break;
                 }*/
-        if (currentSceneIndex >= maxSceneIndex)
+        if (currentSceneIndex == maxSceneIndex)
         {
             currentSceneIndex = 0;
-            print(currentSceneIndex);
+           // print(currentSceneIndex);
             SceneManager.LoadScene(currentSceneIndex); // todo allow more than 2 levels;
         }
         else {
-            currentSceneIndex++;
-            print(currentSceneIndex);
-            SceneManager.LoadScene(currentSceneIndex);
+            nextSceneIndex = currentSceneIndex + 1;
+            //print(nextSceneIndex);
+            SceneManager.LoadScene(nextSceneIndex);
         }
         
         
@@ -146,7 +181,7 @@ public class Rocket : MonoBehaviour
 
    
     
-    void LoadFirstLevel() 
+    private void LoadFirstLevel() 
     {
         SceneManager.LoadScene(currentSceneIndex); // todo allow more than 2 levels;
     }
